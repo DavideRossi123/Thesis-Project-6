@@ -1,61 +1,3 @@
-#Bivariate spatial plots
-
-
-#Poisson model (need to state convergence issues)
-
-
-#NB shape file as well necessary file to run the code!!!!!!!!
-
-#change  shooting_longitude, shooting_latitude everywhere 
-
-
-#refit models
-
-
-#create 3 codes
-
-#NB at this poin t try to fit a model without surface temperature and slope in 
-#expert 1 and expert 2 to enhance interpretability at the maximum.!!!!!!!!!!!!!!!!!!!
-#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-#TO include in the thesis stuff about prediction error!!!!!!!!
-#The formula given in the ZImoE is prediction variance not mean variance
-
-
-#Suggest in the thesis the use of simulation studies
-#to assess godness of fit of zinbmoe algorithm !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-
-#Add part in which you verufy that hakes in expert 2 are indeed lower in length
-
-
-
-#Think about reparametrizing the model so that w2 not w1 is the response variable.
-
-
-#Do Kolmogrov smirnov test for residuals
-
-
-#gratia::appraise(model14)  !!!!!!!!!!
-
-
-# For data with many zeroes clustered together in the covariate space it is quite easy to set up GAMs
-# which suffer from identifiability problems, particularly when using Poisson or binomial families.
-# The problem is that with e.g. log or logit links, mean value zero corresponds to an infinite range on
-# the linear predictor scale.
-
-
-#2   Check if nursery areas probailities are constant trough time 
-
-
-#REDUCE THE NUMBER OF BASIS IN SHOOTING DEPTH in the mixing 
-#model AS THE ESTIMATE IS TOO WIGLY!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 ################################# Libraries ####################################
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
@@ -1113,7 +1055,7 @@ MEDITS_MERL_MOD$folk_5 <- medits_folk5$folk_5cl_txt
 #and open access (Rossi, 2026; DOI: 10.5281/zenodo.19111208).
 #The unified raster is downloaded directly from Zenodo below.
 
-options(timeout = 3600)  # Increase timeout to allow download of large file (1.1 GB)
+options(timeout = 3600)  
 tmp_tif <- tempfile(fileext = ".tif")
 download.file(
   url      = "https://zenodo.org/records/19111208/files/MEDITS_bathy.tif",
@@ -1277,9 +1219,10 @@ MEDITS_MERL_MOD$shooting_flowdir <- terra::extract(MEDITS_flowdir_crop, coords, 
 
 
 
-#
+
 #################################### DATASET TC ##################################
 
+options(timeout = 3600)
 TC <- readRDS(url("https://raw.githubusercontent.com/DavideRossi123/Thesis-Project-6/main/TC.rds"))
 
 #MEDITS TC haul-species-length-sex-maturity level data.
