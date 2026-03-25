@@ -11,15 +11,6 @@ This thesis analyses the environmental and temporal drivers of European hake (*M
 
 The core methodological contribution is a novel EM-based estimation algorithm for **Zero-Inflated Negative Binomial Mixture-of-Experts (ZINBMoE)** models with GAM experts and gating networks, extending existing GLM-based frameworks to support flexible, nonlinear modelling of overdispersed, zero-inflated count data.
 
----
-
-## Repository Structure
-```
-Thesis-Project-6/
-├── data/           # Raw and processed trawl survey data
-├── scripts/        # R scripts (modelling) & Python scripts (data retrieval)
-├── figures/        # Spatio-temporal maps and plots
-└── results/        # Model outputs and validation metrics
 ```
 
 ---
@@ -28,8 +19,6 @@ Thesis-Project-6/
 
 - Zero-Inflated Negative Binomial GAM (ZINB-GAM)
 - Mixture-of-Experts models (ZINBMoE, ZINBMoE2)
-- EM algorithm with penalised likelihood M-steps
-- Models fitted in **R** (`mgcv`); data retrieved via API using **Python**
 - Training period: 2000–2020 | Validation: 2021
 
 ---
