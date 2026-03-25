@@ -54,7 +54,7 @@ t_start, t_end   = MEDITS_MERL_MOD["haul_date"].min(), MEDITS_MERL_MOD["haul_dat
 
 ds = cm.open_dataset(
     dataset_id="cmems_mod_glo_phy_my_0.083deg_P1D-m",
-    variables=["bottomT"],                     # <-- crucial: request bottomT
+    variables=["bottomT"],                     
     minimum_longitude=float(lon_min),
     maximum_longitude=float(lon_max),
     minimum_latitude=float(lat_min),
